@@ -34,10 +34,10 @@ export default function Header() {
           <Image
             src="/logo.svg"
             alt="JD Invest"
-            width={180}
-            height={62}
+            width={240}
+            height={80}
             priority
-            style={{ objectFit: 'contain', height: '38px', width: 'auto' }}
+            className="header__logo-img"
           />
         </Link>
 
@@ -83,7 +83,7 @@ export default function Header() {
         }
 
         .header--scrolled {
-          height: var(--nav-height-scrolled);
+          height: 64px;
           background: rgba(11, 15, 23, 0.82);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
@@ -98,17 +98,25 @@ export default function Header() {
         }
 
         .header__logo {
-          font-family: var(--font-heading);
-          font-size: 1.35rem;
-          font-weight: 600;
-          color: var(--off-white);
-          letter-spacing: -0.01em;
+          display: flex;
+          align-items: center;
           text-decoration: none;
-          transition: color var(--transition-fast);
+          transition: opacity var(--transition-fast);
         }
 
         .header__logo:hover {
-          color: var(--champagne);
+          opacity: 0.85;
+        }
+
+        :global(.header__logo-img) {
+          height: 48px;
+          width: auto;
+          object-fit: contain;
+          transition: height var(--transition-med);
+        }
+
+        .header--scrolled :global(.header__logo-img) {
+          height: 40px;
         }
 
         .header__nav {

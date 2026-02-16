@@ -72,10 +72,10 @@ export default function Home() {
         <style jsx>{`
           .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: var(--space-section) var(--content-padding);
+            padding: var(--space-2xl) var(--content-padding);
             overflow: hidden;
           }
 

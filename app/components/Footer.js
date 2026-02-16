@@ -15,9 +15,9 @@ export default function Footer() {
               <Image
                 src="/logo.svg"
                 alt="JD Invest"
-                width={160}
-                height={55}
-                style={{ objectFit: 'contain', height: '34px', width: 'auto' }}
+                width={220}
+                height={72}
+                style={{ objectFit: 'contain', height: '44px', width: 'auto' }}
               />
             </Link>
             <p className="footer__tagline">

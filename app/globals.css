@@ -39,10 +39,10 @@
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 5rem;
-  --space-3xl: 7rem;
-  --space-section: clamp(5rem, 10vw, 9rem);
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 5.5rem;
+  --space-section: clamp(3.5rem, 7vw, 5.5rem);
 
   /* Layout */
   --max-width: 1200px;
@@ -65,8 +65,8 @@
   --transition-slow: 800ms var(--ease-premium);
 
   /* Nav */
-  --nav-height: 72px;
-  --nav-height-scrolled: 56px;
+  --nav-height: 80px;
+  --nav-height-scrolled: 64px;
 }
 
 /* ── Reset & Base ──────────────────────────────── */
@@ -113,7 +113,7 @@ h1 {
 }
 h2 {
   font-size: var(--h2);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-sm);
 }
 h3 {
   font-size: var(--h3);
@@ -153,6 +153,10 @@ a:hover {
   padding: var(--space-section) var(--content-padding);
 }
 
+.section + .section {
+  padding-top: 0;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -180,7 +184,7 @@ a:hover {
     transparent 100%
   );
   border: none;
-  margin: var(--space-section) 0;
+  margin: var(--space-lg) 0;
 }
 
 /* ── Buttons ───────────────────────────────────── */
@@ -237,7 +241,7 @@ a:hover {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
-  padding: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   transition: all var(--transition-med);
 }
 
@@ -398,7 +402,7 @@ a:hover {
   }
 
   .section {
-    padding: var(--space-2xl) var(--content-padding);
+    padding: var(--space-xl) var(--content-padding);
   }
 
   h1 {

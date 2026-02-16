@@ -70,63 +70,6 @@ export default function Approach() {
           </div>
         </ScrollReveal>
 
-        <style jsx>{`
-          .uw-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
-          }
-
-          .uw-pill {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-sm);
-            padding: var(--space-lg);
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-med);
-          }
-
-          .uw-pill:hover {
-            border-color: rgba(200, 179, 138, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-          }
-
-          .uw-pill__marker {
-            flex-shrink: 0;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--champagne);
-            margin-top: 6px;
-            opacity: 0.7;
-          }
-
-          .uw-pill__title {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--off-white);
-            margin-bottom: 4px;
-          }
-
-          .uw-pill__desc {
-            font-size: var(--small);
-            color: var(--slate);
-            margin: 0;
-            line-height: 1.5;
-          }
-
-          @media (max-width: 768px) {
-            .uw-grid {
-              grid-template-columns: 1fr;
-            }
-          }
-        `}</style>
       </section>
 
       {/* ── Portfolio Construction ──────────────── */}
@@ -168,6 +111,56 @@ export default function Approach() {
       </section>
 
       <style jsx>{`
+        .uw-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--space-lg);
+        }
+
+        .uw-pill {
+          display: flex;
+          align-items: flex-start;
+          gap: var(--space-sm);
+          padding: var(--space-lg);
+          background: var(--glass-bg);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid var(--glass-border);
+          border-radius: var(--radius-md);
+          transition: all var(--transition-med);
+        }
+
+        .uw-pill:hover {
+          border-color: rgba(200, 179, 138, 0.2);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .uw-pill__marker {
+          flex-shrink: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--champagne);
+          margin-top: 6px;
+          opacity: 0.7;
+        }
+
+        .uw-pill__title {
+          font-family: var(--font-body);
+          font-size: 1rem;
+          font-weight: 600;
+          color: var(--off-white);
+          margin-bottom: 4px;
+        }
+
+        .uw-pill__desc {
+          font-size: var(--small);
+          color: var(--slate);
+          margin: 0;
+          line-height: 1.5;
+        }
+
         .bullet-list {
           display: flex;
           flex-direction: column;
@@ -194,6 +187,12 @@ export default function Approach() {
         .bullet-item p {
           margin: 0;
           color: var(--slate);
+        }
+
+        @media (max-width: 768px) {
+          .uw-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </>
