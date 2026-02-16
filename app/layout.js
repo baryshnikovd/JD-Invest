@@ -3,15 +3,17 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import GrainOverlay from './components/GrainOverlay';
 
-export const metadata = {
+  metadataBase: new URL('https://jd-invest-production.vercel.app'),
   title: 'JD Invest LLC — Global Private Investment Firm',
   description:
     'JD Invest LLC is a global private investment firm headquartered in Dubai, deploying long-duration capital across technology and essential real assets.',
-  icons: { icon: '/favicon.ico' },
   openGraph: {
     title: 'JD Invest LLC',
     description:
-      'A global private investment firm deploying long-duration capital across technology and essential real assets.',
+      'Global private investment firm deploying long-duration capital across technology and essential real assets.',
+    url: 'https://jd-invest-production.vercel.app',
+    siteName: 'JD Invest LLC',
+    locale: 'en_US',
     type: 'website',
   },
 };
