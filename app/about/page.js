@@ -59,7 +59,11 @@ export default function About() {
           <hr className="divider fade-in" />
           <div className="location-line fade-in">
             <span className="loc-marker">◆</span>
-            <span>Dubai, UAE</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <span>Meydan Grandstand, 6th floor</span>
+              <span>Meydan Road, Nad Al Sheba</span>
+              <span>Dubai, U.A.E.</span>
+            </div>
             <span className="loc-sep">·</span>
             <span>Global Scope</span>
           </div>

@@ -44,7 +44,11 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p>© {year} JD Invest LLC. All rights reserved.</p>
-          <p>Dubai, UAE</p>
+          <div className="address-lines">
+            <p>Meydan Grandstand, 6th floor</p>
+            <p>Meydan Road, Nad Al Sheba</p>
+            <p>Dubai, U.A.E.</p>
+          </div>
         </div>
       </div>
 
@@ -136,7 +140,21 @@ export default function Footer() {
           margin: 0;
         }
 
+        .address-lines {
+          text-align: right;
+        }
+
+        .address-lines p {
+           margin: 2px 0;
+           font-size: var(--small);
+           color: var(--slate-dim);
+        }
+
         @media (max-width: 768px) {
+          .address-lines {
+            text-align: left;
+            margin-top: var(--space-md);
+          }
           .footer__top {
             flex-direction: column;
             gap: var(--space-xl);

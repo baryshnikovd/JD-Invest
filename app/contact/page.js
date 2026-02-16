@@ -39,7 +39,11 @@ export default function Contact() {
             </div>
             <div className="info-item">
               <span className="info-label">Location</span>
-              <span className="info-value-text">Dubai, UAE</span>
+              <div className="info-value-text">
+                <p style={{ margin: 0 }}>Meydan Grandstand, 6th floor</p>
+                <p style={{ margin: 0 }}>Meydan Road, Nad Al Sheba</p>
+                <p style={{ margin: 0 }}>Dubai, U.A.E.</p>
+              </div>
             </div>
           </div>
         </ScrollReveal>
