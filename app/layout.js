@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import GrainOverlay from './components/GrainOverlay';
 
+export const metadata = {
   metadataBase: new URL('https://jd-invest-production.vercel.app'),
   title: 'JD Invest LLC — Global Private Investment Firm',
   description:
