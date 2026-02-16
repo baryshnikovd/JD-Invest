@@ -257,9 +257,29 @@ export default function Header() {
             transform: translateX(0);
           }
 
+          /* Staggered Animation for Links */
+          .header__nav--open .header__link,
+          .header__nav--open .header__cta {
+            opacity: 0;
+            animation: slideIn 0.6s var(--ease-premium) forwards;
+          }
+
+          .header__nav--open .header__link:nth-child(1) { animation-delay: 0.1s; }
+          .header__nav--open .header__link:nth-child(2) { animation-delay: 0.15s; }
+          .header__nav--open .header__link:nth-child(3) { animation-delay: 0.2s; }
+          .header__nav--open .header__link:nth-child(4) { animation-delay: 0.25s; }
+          .header__nav--open .header__cta { animation-delay: 0.3s; }
+
+          @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+
           .header__link {
             font-size: 1.25rem;
             font-family: var(--font-heading);
+            width: 100%;
+            text-align: center;
           }
 
           .header__cta {

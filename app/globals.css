@@ -60,9 +60,9 @@
 
   /* Transitions */
   --ease-premium: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --transition-fast: 200ms var(--ease-premium);
-  --transition-med: 400ms var(--ease-premium);
-  --transition-slow: 800ms var(--ease-premium);
+  --transition-fast: 300ms var(--ease-premium); /* Slowed down from 200ms */
+  --transition-med: 600ms var(--ease-premium); /* Slowed down from 400ms */
+  --transition-slow: 1000ms var(--ease-premium); /* Slowed down from 800ms */
 
   /* Nav */
   --nav-height: 80px;
@@ -104,8 +104,13 @@ h6 {
   font-family: var(--font-heading);
   font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em; /* Tighter tracking for premium feel */
   color: var(--off-white);
+}
+
+::selection {
+  background: var(--champagne);
+  color: var(--ink);
 }
 
 h1 {
@@ -218,7 +223,13 @@ a:hover {
   border-color: rgba(200, 179, 138, 0.3);
   color: var(--off-white);
   box-shadow: var(--shadow-glow);
-  transform: translateY(-1px);
+  transform: translateY(-2px); /* Slightly more movement */
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  background: var(--navy);
+  transition-duration: 100ms; /* Snappy feedback */
 }
 
 .btn-secondary {
@@ -231,7 +242,13 @@ a:hover {
   background: var(--glass-bg-light);
   border-color: rgba(200, 179, 138, 0.25);
   color: var(--champagne);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  background: rgba(246, 243, 238, 0.03);
+  transition-duration: 100ms;
 }
 
 /* ── Card ──────────────────────────────────────── */
