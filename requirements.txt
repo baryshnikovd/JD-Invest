@@ -1,0 +1,10 @@
+# Core
+numpy
+pandas
+
+# Visualization
+matplotlib
+
+# Utilities
+python-dotenv
+requests
