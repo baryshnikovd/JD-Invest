@@ -174,17 +174,11 @@ a:hover {
 
 /* ── Gradient Divider ──────────────────────────── */
 .divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--glass-border) 20%,
-    rgba(200, 179, 138, 0.2) 50%,
-    var(--glass-border) 80%,
-    transparent 100%
-  );
+  height: 24px;
+  background: url('/divider-motif.png') center / 100% 100% no-repeat;
   border: none;
   margin: var(--space-lg) 0;
+  opacity: 0.08;
 }
 
 /* ── Buttons ───────────────────────────────────── */
@@ -237,6 +231,10 @@ a:hover {
 /* ── Card ──────────────────────────────────────── */
 .card {
   background: var(--glass-bg);
+  background-image: url('/card-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
