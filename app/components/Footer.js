@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,7 +11,15 @@ export default function Footer() {
       <div className="container footer__inner">
         <div className="footer__top">
           <div className="footer__brand">
-            <span className="footer__logo">JD Invest</span>
+            <Link href="/" className="footer__logo-link">
+              <Image
+                src="/logo.jpg"
+                alt="JD Invest"
+                width={140}
+                height={44}
+                style={{ objectFit: 'contain', height: '32px', width: 'auto' }}
+              />
+            </Link>
             <p className="footer__tagline">
               Global private investment firm headquartered in Dubai.
             </p>

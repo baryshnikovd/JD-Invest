@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
@@ -30,7 +31,14 @@ export default function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__inner container">
         <Link href="/" className="header__logo">
-          JD Invest
+          <Image
+            src="/logo.jpg"
+            alt="JD Invest"
+            width={160}
+            height={50}
+            priority
+            style={{ objectFit: 'contain', height: '36px', width: 'auto' }}
+          />
         </Link>
 
         <nav className={`header__nav ${mobileOpen ? 'header__nav--open' : ''}`}>
