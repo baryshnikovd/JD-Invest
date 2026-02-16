@@ -27,6 +27,18 @@ export default function Header() {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
   return (
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__inner container">
@@ -40,6 +52,12 @@ export default function Header() {
             className="header__logo-img"
           />
         </Link>
+
+        {/* Backdrop for mobile */}
+        <div 
+          className={`mobile-backdrop ${mobileOpen ? 'open' : ''}`} 
+          onClick={() => setMobileOpen(false)}
+        />
 
         <nav className={`header__nav ${mobileOpen ? 'header__nav--open' : ''}`}>
           {navLinks.map((link) => (
@@ -60,6 +78,7 @@ export default function Header() {
           className="header__hamburger"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          style={{ zIndex: 1002 }} // Ensure above sidebar
         >
           <span className={`hamburger-line ${mobileOpen ? 'open' : ''}`} />
           <span className={`hamburger-line ${mobileOpen ? 'open' : ''}`} />
@@ -102,6 +121,7 @@ export default function Header() {
           align-items: center;
           text-decoration: none;
           transition: opacity var(--transition-fast);
+          z-index: 1002; /* Above sidebar */
         }
 
         .header__logo:hover {
@@ -191,6 +211,22 @@ export default function Header() {
           transform: rotate(-45deg) translate(4px, -5px);
         }
 
+        .mobile-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(4px);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity var(--transition-med);
+          z-index: 1000; /* Behind sidebar */
+        }
+        
+        .mobile-backdrop.open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
         @media (max-width: 768px) {
           .header__hamburger {
             display: flex;
@@ -198,19 +234,23 @@ export default function Header() {
 
           .header__nav {
             position: fixed;
-            top: var(--nav-height);
-            left: 0;
+            top: 0;
             right: 0;
             bottom: 0;
+            width: 80%;
+            max-width: 320px;
+            height: 100dvh;
             flex-direction: column;
-            justify-content: flex-start;
-            padding-top: var(--space-2xl);
+            justify-content: center;
+            padding: var(--space-2xl);
             gap: var(--space-xl);
-            background: rgba(11, 15, 23, 0.96);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(7, 26, 43, 0.98);
+            border-left: 1px solid var(--glass-border);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
             transform: translateX(100%);
             transition: transform var(--transition-med);
+            z-index: 1001;
+            overflow-y: auto;
           }
 
           .header__nav--open {
@@ -218,12 +258,15 @@ export default function Header() {
           }
 
           .header__link {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            font-family: var(--font-heading);
           }
 
           .header__cta {
             margin-left: 0;
             margin-top: var(--space-sm);
+            width: 100%;
+            text-align: center;
           }
         }
       `}</style>
