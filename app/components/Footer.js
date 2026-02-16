@@ -13,11 +13,11 @@ export default function Footer() {
           <div className="footer__brand">
             <Link href="/" className="footer__logo-link">
               <Image
-                src="/logo.jpg"
+                src="/logo.svg"
                 alt="JD Invest"
-                width={140}
-                height={44}
-                style={{ objectFit: 'contain', height: '32px', width: 'auto' }}
+                width={160}
+                height={55}
+                style={{ objectFit: 'contain', height: '34px', width: 'auto' }}
               />
             </Link>
             <p className="footer__tagline">

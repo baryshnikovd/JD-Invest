@@ -32,12 +32,12 @@ export default function Header() {
       <div className="header__inner container">
         <Link href="/" className="header__logo">
           <Image
-            src="/logo.jpg"
+            src="/logo.svg"
             alt="JD Invest"
-            width={160}
-            height={50}
+            width={180}
+            height={62}
             priority
-            style={{ objectFit: 'contain', height: '36px', width: 'auto' }}
+            style={{ objectFit: 'contain', height: '38px', width: 'auto' }}
           />
         </Link>
 
